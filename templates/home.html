@@ -1,0 +1,83 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DCR</title>
+    <script>
+        function previewImage() {
+          var fileInput = document.getElementById('myFileInput');
+          var preview = document.getElementById('preview');
+          if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              preview.src = e.target.result;
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+          }
+        }
+      </script>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  </head>
+
+  <body>
+    <img id="intro" src="{{url_for('static', filename='img/Intro_Img.jpg')}}">
+    <div class="container">
+        <img id="title" src="{{url_for('static', filename='img/title_img.jpg')}}" alt="Title Image">            
+        <h1>Devnagari Character Recognition OCR</h1>
+    </div>
+
+    <div class="links">
+        <a href="{{url_for('home')}}">home</a>
+        <!-- <a href="home.html">home</a> -->
+        <a href="{{url_for('about')}}">about</a>
+        <!-- <a href="about.html">about</a> -->
+        <a href="{{url_for('links')}}">links</a>
+        <!-- <a href="help.html">help</a> -->
+        <a href="{{url_for('help')}}">help</a>
+
+    </div>
+    
+    <br><br>
+
+    <div class="matter">
+        <p id="para">In the age of digital applications, optical 
+        character recognition (OCR) is a useful tool. There are 
+        many different languages and scripts used around the 
+        world, with more than 300 million individuals in India 
+        speak Hindi as their first language. OCR previously 
+        created for the Devnagari script has a very low recognition 
+        rate. In this paper, we propose an OCR system based on a 
+        Convolutional Neural Network (CNN) model. It increases 
+        the handwritten data's efficiency or accuracy by 98.32%.
+        We do several steps for getting this efficiency like 
+        preprocessing of data, grayscale images, binarization, 
+        reshaping, normalization, modelling, and Evaluation of the 
+        data with the help of plotting.</p>
+        <img id="abst" src="{{url_for('static', filename='img/Abs_img.png')}}">
+    </div>
+
+    <h2><i>Try our Project Model...</i></h2>
+    
+  <center>
+  <form action="/process_image" method="post" enctype="multipart/form-data" style="background-color: rgb(171, 187, 204); border: 2px solid black; width: 300px;"><br>
+    <h2>DCR</h2>
+    <input type="file" class="button" name="image" id="myFileInput" onchange="previewImage()"><br><br>
+    <img id="preview" src=""><br><br>
+    <input class="button" type="submit" value="Predict Image"><br><br><br>
+    <h4 style="border: 2px solid black; border-radius: 2px; height: 30px; width: 200px; background-color: white; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">{{processed_img}}</h4>
+    <br>
+  </form>
+  </center>
+  <p>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+  </p>
+  <br><br>
+  <div>
+    <footer>
+        <div style="max-width:100%;margin:auto;border-top:1px solid #e3c7c3;box-shadow:0px -1px 5px #9c9c9c"></div>
+        <h4 style="text-align: center;bottom: 0px; color:#9c9c9c;">© Copyright DCR A3 [2023-2024]</h4>
+    </footer>
+</div>
+</html>

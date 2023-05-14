@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Help</title>
+</head>
+<body>
+    <img id="intro" src="{{url_for('static', filename='img/Intro_Img.jpg')}}">
+    <div class="container">
+        <img id="title" src="{{url_for('static', filename='img/title_img.jpg')}}" alt="Title Image">            
+        <h1>Devnagari Character Recognition OCR</h1>
+    </div>
+
+    <div class="links">
+        <a href="{{url_for('home')}}">home</a>
+        <!-- <a href="home.html">home</a> -->
+        <a href="{{url_for('about')}}">about</a>
+        <!-- <a href="about.html">about</a> -->
+        <a href="{{url_for('links')}}">links</a>
+        <!-- <a href="help.html">help</a> -->
+        <a href="{{url_for('help')}}">help</a>
+
+    </div>
+
+    <p>For any kind of help you can contact on the given numbers or email....</p>
+    <br>
+    <h2>Ananya Shukla</h2>
+    <p>Contact Number: <a href="tel:+917017800538">7017800538</a></p>
+    <p>Email: <a href="mailto:ananyashukla7017@gmail.com">ananyashukla7017@gmail.com</a></p>
+    <br><br>
+    <div>
+      <footer>
+          <div style="max-width:100%;margin:auto;border-top:1px solid #e3c7c3;box-shadow:0px -1px 5px #9c9c9c"></div>
+          <h4 style="text-align: center;bottom: 0px; color:#9c9c9c;">© Copyright DCR A3 [2023-2024]</h4>
+      </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>about</title>
+</head>
+<body>
+    <img id="intro" src="{{url_for('static', filename='img/Intro_Img.jpg')}}">
+    <div class="container">
+        <img id="title" src="{{url_for('static', filename='img/title_img.jpg')}}" alt="Title Image">            
+        <h1>Devnagari Character Recognition OCR</h1>
+    </div>
+
+    <div class="links">
+        <a href="{{url_for('home')}}">home</a>
+        <!-- <a href="home.html">home</a> -->
+        <a href="{{url_for('about')}}">about</a>
+        <!-- <a href="about.html">about</a> -->
+        <a href="{{url_for('links')}}">links</a>
+        <!-- <a href="help.html">help</a> -->
+        <a href="{{url_for('help')}}">help</a>
+
+    </div>
+    
+    <br><br>
+
+    <div class="container">      
+        <h1 style="text-align: center;">System Design & Flow Chart</h1>
+    </div>
+
+
+    <div class="card_cont">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                 <a href="#my-section">
+                 <img class="hello" src="{{url_for('static', filename='img/system_design.png')}}" style="width:100%"></a>
+              </div>
+              <div class="flip-card-back">
+                <h1 style="text-align: center;"><b>System Design</b></h1>
+                <a href="#my-section">
+                <p style="text-align: center; font-size: 26px;">System design refers to the process of defining,<br> planning, and developing the <br> architecture, components, modules, <br>interfaces, and data for a software system <br> or application.</p></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                 <a href="#my-section1">
+                 <img class="hello" src="{{url_for('static', filename='img/flow_chart.jpg')}}" style="width:100%"></a>
+              </div>
+              <div class="flip-card-back">
+                <h1 style="text-align: center;"><b>Flow Chart</b></h1>
+                <a href="#my-section1">
+                <p style="text-align: center; font-size: 26px;">A flowchart is a graphical representation <br>of a process or a system that uses symbols,<br> shapes, and arrows to illustrate <br> the flow of information, <br> inputs, and outputs.</p></a>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+    <br>
+    <br>
+    <div class="matter">
+        <img id="cnn" src="{{url_for('static', filename='img/cnn.png')}}">
+        <p>To analyze attributes properly, we use different types of algorithms and after 
+        Comparison we come across that the Convolutional Neural Network algorithms is 
+        most suitable for making an OCR which gave result on higher accuracy.<br>
+        Deep learning neural networks like CNN are used to interpret structured data 
+        arrays. It is very satisfactory for designs in the input image, such as lines, curves etc. which make CNN robust in the field of Computer Vision. After applying 3 to 4 convolutional layers CNN is viable to understand the handwritten digits or 
+        characters. A convolutional neural network is built as a multi-layered feed-forward network from the combination of numerous hidden layers.<br> This is the first layer which extracts features from input as an image. By learning features of image using small portion of the data, the convolutional layer takes the relation between pixels. It takes two attributes as matrix of an image and a kernel.</p>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="my-section">
+        <div class="container">      
+            <h1>System Design</h1>
+        </div>
+        <h2 style="color: rgb(1, 44, 90); text-shadow: 4px; font-style: italic;">Stages of character recognition:</h2>
+        <div class="hi">
+            <p> 
+                <b><i>Image Acquisition:</i></b>Take a picture of the document with a digital camera or   scan it, then save it on a computer with the appropriate image extension.
+                <br><br>
+                <b><i>Pre-Processing:</i></b>Because we are only interested in the character's pattern and not its color at this level, the saved image should be transformed from color to grayscale. This is because the grayscale image can be processed further with the least amount of memory use and information density. After conversion, the signal must be transformed into a binary image with just the values 1 and 0 of intensity. When the Devanagari script is converted to a binary picture, the characters have varying widths that must be fixed using image normalization techniques to create a consistent matrix, such as 16 by 16 or 128 by 128.
+                <br><br>
+                <b><i>Image Segmentation:</i></b>Image segmentation, which is the heart of the entire OCR to increase hit rate of the algorithm, is nothing more than separating the entire image into small subimages depending on the individuality in the content.
+                <br><br>
+                <b><i>Feature extraction:</i></b>The focus of this stage is to extract a set of features from the segmented image to increase character recognition rate; these features are extracted from global content that was made available after the segmentation stage. Feature extraction is the main stage of the Character identification process; this is the 
+                process where each character will be represented as a feature vector.
+                <br><br>
+                <b><i> Image Classification:</i></b>Following feature extraction, features are converted into feature vectors, which are then used by image classifiers like K-Nearest Neighbors (KNN), Bayesian Classifiers, Convolutional Neural Networks, and Hidden Markov Models (HMM), automated decision-maker.
+                <br><br>
+                <b><i>Post-processing:</i></b>At this stage, based totally on the decisions made in the classification stage, the recognized fonts are printed on the digital screen in an editable format.
+            </p>
+            <img id="stages" src="{{url_for('static', filename='img/stages.png')}}">
+        </div>
+        <br>
+        <br>
+        <h2 style="color: rgb(1, 44, 90); text-shadow: 4px; font-style: italic;">System Architecture /Diagrammatical View:</h2>
+        <p>In this we represent the system architecture of our project in le-man term, so 
+            the one easily understands what we had done in project.</p>
+        <center><img src="{{url_for('static', filename='img/sys_design.png')}}"></center>
+    </div>
+
+<br>
+<br>
+
+    <div id="my-section1">
+        <div class="container">      
+            <h1 style="text-align: left;">Flow Chart</h1>
+        </div>
+        <p>It is a chart which represents the entire methodologies of the project. It shows the working of model using CNN model and represents the output of the project in an 
+        efficient manner.</p>
+        <center><img src="{{url_for('static', filename='img/flow chart.png')}}"></center>
+    </div>
+    <br><br>
+    <div>
+        <footer>
+            <div style="max-width:100%;margin:auto;border-top:1px solid #e3c7c3;box-shadow:0px -1px 5px #9c9c9c"></div>
+            <h4 style="text-align: center;bottom: 0px; color:#9c9c9c;">© Copyright DCR A3 [2023-2024]</h4>
+        </footer>
+    </div>
+
+
+</body>
+</html>
